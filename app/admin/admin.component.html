@@ -1,0 +1,80 @@
+<br><br><br><br>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title> 
+</head>
+<body>
+  <br><br><br><br>
+ 
+<br>
+
+<br><br>
+
+<!-- <form  #myForm="ngForm" (ngSubmit)="cdregister(myForm)" role="form" style="width: 50%"> -->
+<!-- <form action=""  style="position: absolute;left: 300px; right: 500px;"> -->
+  <form  #myForm="ngForm" (ngSubmit)="insert(myForm)" role="form" style="position: absolute;left: 300px; right: 500px;">
+    <div class="form-group">
+      course
+<select  id="orders"  (change)="subjectlist($event)">
+  <option *ngFor="let c of course; let i = index"[value]="course[i].cid">
+    {{course[i].courseName}}
+  </option>
+    </select>
+  </div>
+    <div class="form-group">
+      subject
+      <select  id="orders"  (change)="topiclist($event)">
+        <option *ngFor="let c of subject; let i = index"[value]="subject[i].sid">
+          {{subject[i].subjectName}}
+        </option>
+      </select></div>
+    <div class="form-group">
+      topic
+      <select  id="orders"  (change)="list($event)" name="topic.tid" ngModel class="form-control">
+        <option *ngFor="let c of topic; let i = index"[value]="topic[i].tid">
+          {{topic[i].topicName}}
+        </option>
+      </select></div>
+
+   <div class="form-group">
+    Level
+    <select  id="orders"  (change)="level($event)" name="level" ngModel class="form-control">
+      <option >EASY</option>
+      <option >MEDIUM</option>
+      <option >HARD</option>
+
+    </select>  </div>
+
+  <div class="form-group">
+    Question
+    <input type="text" name="ques" ngModel class="form-control" id="" placeholder="" required>
+  </div>
+
+  <div class="form-group">
+    Choice 1    <input type="text" name="choice1" ngModel class="form-control" id="" placeholder="" required>
+  </div>
+  <div class="form-group">
+    Choice 2    <input type="text" name="choice2" ngModel class="form-control" id="" placeholder="" required>
+      </div>
+    <div class="form-group">
+         Choice 3    <input type="text" name="choice3" ngModel class="form-control" id="" placeholder="" required>
+     </div>
+     <div class="form-group">
+        Choice 4    <input type="text" name="choice4" ngModel class="form-control" id="" placeholder="" required>
+     </div>
+    <div class="form-group">
+        Answer    <input type="text" name="answer" ngModel class="form-control" id="" placeholder="" required>
+     </div>
+ 
+
+  <!-- <button type="submit" class="btn btn-primary"><a href="/cd_edu">Submit</a></button> -->
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</body>
+</html>

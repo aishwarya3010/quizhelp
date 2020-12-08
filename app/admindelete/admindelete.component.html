@@ -1,0 +1,26 @@
+<br><br><br><br><br><br>
+
+<div class="table-fixed" style="width: 50%"> 
+    <table class="table table-hover"style="color:blue;font-size:20px;background-color: white;">
+      <thead>
+        <tr style="color: white;font-weight: bold;background-color: black;">
+           
+          <th>Questions</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+       
+        <tr *ngFor="let q of ques">
+            <td>
+                <tr>{{q.ques}}</tr>
+            </td>
+            <td>
+          
+                <input type="button" (click)="delete(q.qid)" value="delete">
+            </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>

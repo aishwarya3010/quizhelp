@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- <script>
+    function abc()
+    {
+         var ans = document.getElementsByName("ans");
+          var ch =document.getElementsByName("option");
+          console.log(ans);
+          console.log(ch);
+      if(ans==ch)
+      alert("right");
+      else
+      alert("wrong");
+    }
+function myFunction()
+{
+  alert("yoo");
+}
+</script> -->
+
+</head>
+<body>
+  
+  
+ 
+  <br><br><br><br>
+  
+  <h1 style="color: red;text-align: center;font-weight: bold;">Course List</h1>
+  
+  
+  <div >
+    <div class="table-fixed" style="width: 50%"> 
+      <table class="table table-hover"style="color:blue;font-size:20px;background-color: white;">
+        <thead>
+          <tr style="color: white;font-weight: bold;background-color: black;">
+             
+            <th>Questions</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+         <tr>
+           <td>
+            <tr *ngFor="let q of ques">
+              <td>
+                  <tr>{{q.ques}}</tr>
+                  <tr>
+                    <!-- <input type="radio" id="option1"  name="option" value="">{{q.choice1}}
+                    <br>
+                    <input type="radio" id="option2" name="option">{{q.choice2}}
+                    <br>
+                    <input type="radio" id="option3"name="option">{{q.choice3}}
+                    <br>
+                    <input type="radio" id="option4" name="option">{{q.choice4}}
+                    <br> -->
+                    <select  id="orders"  (change)="check($event)" name="level" ngModel class="form-control">
+                      <option >{{q.choice1}}</option>
+                      <option >{{q.choice2}}</option>
+                      <option >{{q.choice3}}</option>
+                      <option >{{q.choice4}}</option>
+
+                    </select>                  </tr>
+                  <!-- <button type="button" (click)="myFunction(q.qid)">Try it</button> -->
+                  <input type="button" value="click" (click)="myFunction(q.answer)">
+                  <!-- <button onclick="abc()" value="click">click</button> -->
+                  
+                  <tr>
+                    <button (click)="toggle()" id="bt">
+                      {{buttonName}}
+                      
+                  </button>    
+                  <ng-container *ngIf="show">{{q.answer}}</ng-container>
+                </tr>
+                </td>
+                <td >{{check1}}</td>
+          </tr>
+         
+         </tr>
+          
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
